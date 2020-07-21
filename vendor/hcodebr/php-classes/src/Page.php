@@ -26,7 +26,7 @@ class Page {
 			$config = array(
 				"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/",
 				"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-				"debug"         => true
+				"debug"         => false
 			);
 
 		Tpl::configure( $config );
