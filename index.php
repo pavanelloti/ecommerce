@@ -25,7 +25,6 @@ $app->get('/admin', function() {
     User::verifyLogin();
     $page = new PageAdmin();
     $page->setTpl("index");
-
 });
 
 $app->get('/admin/login', function() {
@@ -253,6 +252,17 @@ $app->post("/admin/categories/:idcategory", function($idcategory) {
 
 });
 
+$app->get("/categories/:idcategory", function($idcategory) {
+
+	$category = new Category();
+	$category->get((int)$idcategory);
+	$page = new Page();
+	$page->setTpl("category", array(
+		"category"=>$category->getValues(),
+		"products"=>[]
+	));
+
+});
 
 $app->run();
 
