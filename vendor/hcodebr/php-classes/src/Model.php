@@ -25,16 +25,16 @@ class Model {
 
 	}
 
-	public function setData($data = array())
-	{
-
+	public function setData($data = array()) {
+	
 		foreach ($data as $key => $value) {
-			
+	
 			$this->{"set".$key}($value);
+	
 		}
 
 	}
-
+	
 	public function getValues()
 	{
 
