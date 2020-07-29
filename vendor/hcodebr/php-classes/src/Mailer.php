@@ -1,13 +1,13 @@
-<?php
+<?php 
 
 namespace Hcode;
 
 use Rain\Tpl;
 
-class Mailer{
-
-	const USERNAME = "pavanellofotos@gmail.com";
-	const PASSWORD = "h@vana#21";
+class Mailer {
+	
+	const USERNAME = "suporte@enxaimel.com.br";
+	const PASSWORD = "kombi*1994";
 	const NAME_FROM = "Hcode Store";
 
 	private $mail;
@@ -16,13 +16,13 @@ class Mailer{
 	{
 
 		$config = array(
-				"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
-				"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-				"debug"         => false
-			);
+			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
+			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
+			"debug"         => false
+	    );
 
 		Tpl::configure( $config );
-		
+
 		$tpl = new Tpl;
 
 		foreach ($data as $key => $value) {
@@ -31,7 +31,6 @@ class Mailer{
 
 		$html = $tpl->draw($tplName, true);
 
-		//Create a new PHPMailer instance
 		$this->mail = new \PHPMailer;
 
 		//Tell PHPMailer to use SMTP
@@ -47,13 +46,13 @@ class Mailer{
 		$this->mail->Debugoutput = 'html';
 
 		//Set the hostname of the mail server
-		$this->mail->Host = 'smtp.gmail.com';
+		$this->mail->Host = 'mail.enxaimel.com.br';
 		// use
 		// $this->mail->Host = gethostbyname('smtp.gmail.com');
 		// if your network does not support SMTP over IPv6
 
 		//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-		$this->mail->Port = 587;
+		$this->mail->Port = 465;
 
 		//Set the encryption system to use - ssl (deprecated) or tls
 		$this->mail->SMTPSecure = 'tls';
@@ -66,11 +65,12 @@ class Mailer{
 
 		//Password to use for SMTP authentication
 		$this->mail->Password = Mailer::PASSWORD;
+
 		//Set who the message is to be sent from
-		$this->mail->setFrom( Mailer::USERNAME, Mailer::NAME_FROM);
+		$this->mail->setFrom(Mailer::USERNAME, Mailer::NAME_FROM);
 
 		//Set an alternative reply-to address
-		//$this->mail->addReplyTo($toAddress, $toName);
+		//$this->mail->addReplyTo('replyto@example.com', 'First Last');
 
 		//Set who the message is to be sent to
 		$this->mail->addAddress($toAddress, $toName);
@@ -86,15 +86,17 @@ class Mailer{
 		$this->mail->AltBody = 'This is a plain-text message body';
 
 		//Attach an image file
-		//$this->mail->addAttachment('images/phpmailer_mini.png');
+		//$mail->addAttachment('images/phpmailer_mini.png');
 
 	}
 
 	public function send()
 	{
+
 		return $this->mail->send();
+
 	}
 
 }
 
-?>
+ ?>
