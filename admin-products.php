@@ -46,19 +46,6 @@ $app->get("/admin/products/:idproduct", function($idproduct) {
 
 });
 
-$app->post("/admin/products/:idproduct", function($idproduct) {
-
-	User::verifyLogin();
-	$product = new Product();
-	$product->get((int)$idproduct);
-	$product->setData($_POST);
-	$product->save();
-	$product->setPhoto($_FILES["file"]);
-	header("location: /admin/products");
-	exit;
-
-});
-
 $app->get("/admin/products/:idproduct/delete", function($idproduct) {
 
 	User::verifyLogin();
@@ -68,6 +55,19 @@ $app->get("/admin/products/:idproduct/delete", function($idproduct) {
 	header("Location: /admin/products");
 	exit;
 	
+});
+
+$app->post("/admin/products/:idproduct", function($idproduct) {
+
+	User::verifyLogin();
+	$product = new Product();
+	$product->get((int)$idproduct);
+	$product->setData($_POST);
+	$product->update();
+	$product->setPhoto($_FILES["file"]);
+	header("location: /admin/products");
+	exit;
+
 });
 
 ?>

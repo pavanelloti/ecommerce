@@ -19,13 +19,26 @@ class Product extends Model {
 
 	}
 
+	public static function checkList($list)
+	{
+
+		foreach ($list as &$row) {
+			
+			$p = new Product();
+			$p->setData($row);
+			$row = $p->getValues();
+		}
+
+		return $list;
+	}
+
 	public function save()
 	{
 
 		$sql = new Sql();
 		
 		$results = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
-			":idproduct"=>$this->getididproduct(),
+			":idproduct"=>$this->getidproduct(),
 			":desproduct"=>$this->getdesproduct(),			
 			":vlprice"=>$this->getvlprice(),			
 			":vlwidth"=>$this->getvlwidth(),			
@@ -53,7 +66,7 @@ class Product extends Model {
 		
 	}
 
-	public function delete()
+		public function delete()
 	{
 
 		$sql = new Sql();

@@ -3,8 +3,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
+        Page Header - 
         <small>Optional description</small>
+        <div>
+           <h2>{loop="$data"}
+                  <tr>
+                    <td>{$value.desperson}</td>
+                  </tr>
+                  {/loop}</h2>
+        </div>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
