@@ -2,9 +2,9 @@
 
 use \Hcode\Page;
 use \Hcode\PageAdmin;
-use \Hcode\model\User;
-use \Hcode\model\Category;
-use \Hcode\model\Product;
+use \Hcode\Model\User;
+use \Hcode\Model\Category;
+use \Hcode\Model\Product;
 
 $app->get("/admin/categories", function() {
 

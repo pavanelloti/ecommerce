@@ -1,7 +1,7 @@
 <?php 
 
 use \Hcode\PageAdmin;
-use \Hcode\model\User;
+use \Hcode\Model\User;
 
 $app->get('/admin', function() {
     

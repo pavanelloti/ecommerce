@@ -1,8 +1,8 @@
 <?php 
 
 use \Hcode\PageAdmin;
-use \Hcode\model\User;
-use \Hcode\model\Product;
+use \Hcode\Model\User;
+use \Hcode\Model\Product;
 
 $app->get("/admin/products", function() {
 
