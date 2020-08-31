@@ -1,9 +1,9 @@
 {
-    "name": "pavanelloti/ecommerce",
+    "name": "hcodebr/ecommerce",
     "authors": [
         {
-            "name": "Pavanello TI",
-            "email": "pavanelloti@gmail.com"
+            "name": "Hcode Treinamentos",
+            "email": "suporte@hcode.com.br"
         }
     ],
     "require": {

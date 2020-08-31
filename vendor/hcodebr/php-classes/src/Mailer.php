@@ -6,8 +6,8 @@ use Rain\Tpl;
 
 class Mailer {
 	
-	const USERNAME = "suporte@enxaimel.com.br";
-	const PASSWORD = "kombi*1994";
+	const USERNAME = "pavanellofotos@gmail.com";
+	const PASSWORD = "amnesia0307";
 	const NAME_FROM = "Hcode Store";
 
 	private $mail;
@@ -46,13 +46,13 @@ class Mailer {
 		$this->mail->Debugoutput = 'html';
 
 		//Set the hostname of the mail server
-		$this->mail->Host = 'mail.enxaimel.com.br';
+		$this->mail->Host = 'smtp.gmail.com';
 		// use
 		// $this->mail->Host = gethostbyname('smtp.gmail.com');
 		// if your network does not support SMTP over IPv6
 
 		//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-		$this->mail->Port = 465;
+		$this->mail->Port = 587;
 
 		//Set the encryption system to use - ssl (deprecated) or tls
 		$this->mail->SMTPSecure = 'tls';

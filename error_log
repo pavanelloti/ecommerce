@@ -1,6 +1,0 @@
-[01-Aug-2020 00:55:15 UTC] PHP Warning:  require_once(admin.php): failed to open stream: No such file or directory in /home/enxaimel/crm.enxaimel.com.br/index.php on line 12
-[01-Aug-2020 00:55:15 UTC] PHP Stack trace:
-[01-Aug-2020 00:55:15 UTC] PHP   1. {main}() /home/enxaimel/crm.enxaimel.com.br/index.php:0
-[01-Aug-2020 00:55:15 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/enxaimel/crm.enxaimel.com.br/index.php on line 12
-[01-Aug-2020 00:55:15 UTC] PHP Stack trace:
-[01-Aug-2020 00:55:15 UTC] PHP   1. {main}() /home/enxaimel/crm.enxaimel.com.br/index.php:0
